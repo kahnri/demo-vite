@@ -70,7 +70,7 @@ export function Login() {
         </Grid>
         <Grid item xs={12}>
           <Button fullWidth variant="contained">
-            Mui Button
+            Login
           </Button>
         </Grid>
       </Grid>
