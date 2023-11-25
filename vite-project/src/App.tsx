@@ -1,13 +1,17 @@
 import React from "react";
 import { Login } from "./Login";
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
+import { NavLink, Link, Route, Routes, BrowserRouter } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Login></Login>
-    </BrowserRouter>
+    <>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </>
   );
 }
 
