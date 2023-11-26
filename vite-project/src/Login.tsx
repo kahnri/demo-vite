@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Card,
@@ -15,10 +16,15 @@ import {
   Typography,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { NavLink, Link, Route, Routes } from "react-router-dom";
 
 export function Login() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+
+  const handleLogin = () => {
+    console.log("Login successful");
+    navigate("/home");
+  };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -70,7 +76,7 @@ export function Login() {
           </FormGroup>
         </Grid>
         <Grid item xs={12}>
-          <Button fullWidth variant="contained">
+          <Button fullWidth variant="contained" onClick={handleLogin}>
             Login
           </Button>
         </Grid>
